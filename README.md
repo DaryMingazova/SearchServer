@@ -31,7 +31,7 @@ The search methods for documents on request have sequential and parallel version
 Code usage example:
 
 ```
-search_server search server("and with"s);
+@@search_server search server("and with"s);@@
 
 for (
 id int = 0;
