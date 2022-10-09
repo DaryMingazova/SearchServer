@@ -1,6 +1,8 @@
 Search Server
+------------
 
 About the search server
+----------------------
 
 Search engine + error handling in the search engine + parallel algorithms
 
@@ -59,8 +61,11 @@ Even ID cards:
 { document id = 4, relevance = 0.231049, rating = 1 }
 
 Assembly and installation
+------------------------
 
 Build using any IDE or build from the command line
+
 System requirements
+------------------
 
 A C++ compiler with support for the C++17 standard or later
