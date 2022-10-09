@@ -8,7 +8,7 @@ Search engine + error handling in the search engine + parallel algorithms
 
 The project of a search server that searches among the texts of documents with the possibility of specifying stop words (ignored by the server), negative words (documents with them are not taken into account in the output). Example: the system has the following documents
 
-```bb
+```
 1 white cat and a fashionable collar
 
 2 fluffy cat fluffy tail
@@ -18,15 +18,21 @@ The project of a search server that searches among the texts of documents with t
 
 On request, the cat will find documents 1 and 2. On request, the cat -collar -fluffy will not find anything, because -the collar excluded document 1, and -fluffy — document 2.
 
+```
 If there are no plus words in the request, the server will not find anything.
+
 If the same word is a minus- and plus-word, it is considered a minus-word.
+
 The ranking of the result takes place by TF-IDF, with equality - by the rating of the document.
+
 The search methods for documents on request have sequential and parallel versions.
+```
 
 Code usage example:
 
 search_server search server("and with"s);
 
+```
 for (
 id int = 0;
 constant string and text : {
@@ -51,9 +57,11 @@ cout << "Even identifiers:"s << endl;
 for (const Document& document : search_server.FindTopDocuments(execution::par, "curly nasty cat"s, [](int document_id, DocumentStatus status, int rating) { return document_id % 2 == 0; })) {
 PrintDocument(document);
 }
+```
 
 Conclusion:
 
+```
 RELEVANT by default:
 { document id = 2, relevance = 0.866434, rating = 1 }
 { document id = 4, relevance = 0.231049, rating = 1 }
@@ -63,6 +71,7 @@ prohibited:
 Even ID cards:
 { document id = 2, relevance = 0.866434, rating = 1 }
 { document id = 4, relevance = 0.231049, rating = 1 }
+```
 
 Assembly and installation
 ------------------------
