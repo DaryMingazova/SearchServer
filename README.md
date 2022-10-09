@@ -8,7 +8,7 @@ Search engine + error handling in the search engine + parallel algorithms
 
 The project of a search server that searches among the texts of documents with the possibility of specifying stop words (ignored by the server), negative words (documents with them are not taken into account in the output). Example: the system has the following documents
 
-```rb
+```bb
 1 white cat and a fashionable collar
 
 2 fluffy cat fluffy tail
